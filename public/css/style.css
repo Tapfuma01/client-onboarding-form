@@ -1,0 +1,576 @@
+/* Client Onboarding Form - Dark Mode Design */
+.cof-form-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+.cof-form-glass {
+    background: #2a2d3a; /* Dark Slate */
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    min-height: 600px;
+}
+
+/* Sidebar Styles */
+.cof-form-sidebar {
+    width: 300px;
+    background: #1a1c24; /* Deep Charcoal */
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.cof-sidebar-header {
+    margin-bottom: 2rem;
+}
+
+.cof-sidebar-header h2 {
+    color: #ffffff; /* Pure White */
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.cof-sidebar-header p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.cof-progress-steps {
+    flex: 1;
+}
+
+.cof-step-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.cof-step-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.cof-step-item.active {
+    background: #3a3d4a; /* Steel Gray */
+}
+
+.cof-step-item.completed .cof-step-number {
+    background: #a7f432; /* Lime Accent */
+    color: #1a1c24; /* Deep Charcoal */
+}
+
+.cof-step-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #3a3d4a; /* Steel Gray */
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-right: 1rem;
+    transition: all 0.3s ease;
+}
+
+.cof-step-info {
+    flex: 1;
+}
+
+.cof-step-title {
+    color: #ffffff; /* Pure White */
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+}
+
+.cof-step-desc {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+}
+
+.cof-step-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3a3d4a; /* Steel Gray */
+    transition: all 0.3s ease;
+}
+
+.cof-step-item.active .cof-step-indicator {
+    background: #a7f432; /* Lime Accent */
+    box-shadow: 0 0 10px rgba(167, 244, 50, 0.5);
+}
+
+.cof-sidebar-footer {
+    margin-top: auto;
+    padding-top: 2rem;
+}
+
+.cof-progress-bar {
+    width: 100%;
+    height: 4px;
+    background: #3a3d4a; /* Steel Gray */
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.cof-progress-fill {
+    height: 100%;
+    background: #a7f432; /* Lime Accent */
+    width: 16.66%; /* 1/6 */
+    transition: width 0.3s ease;
+}
+
+.cof-progress-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/* Form Content Styles */
+.cof-form-content {
+    flex: 1;
+    padding: 2rem;
+    background: #2a2d3a; /* Dark Slate */
+    overflow-y: auto;
+}
+
+.cof-step {
+    display: none;
+    height: 100%;
+    flex-direction: column;
+}
+
+.cof-step.active {
+    display: flex;
+}
+
+.cof-step-header {
+    margin-bottom: 2rem;
+}
+
+.cof-step-header h2 {
+    color: #ffffff; /* Pure White */
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.cof-step-header p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-size: 1rem;
+}
+
+.cof-step-body {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+.cof-step-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Welcome Step */
+.cof-welcome-content {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.cof-welcome-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.cof-welcome-content h3 {
+    color: #ffffff; /* Pure White */
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+}
+
+.cof-welcome-content p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.cof-feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cof-feature {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+
+.cof-feature-icon {
+    color: #a7f432; /* Lime Accent */
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+/* Form Grid */
+.cof-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.cof-form-group {
+    margin-bottom: 0;
+}
+
+.cof-form-full {
+    grid-column: 1 / -1;
+}
+
+.cof-form-group label {
+    display: block;
+    color: #ffffff; /* Pure White */
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Glass Input Fields */
+.cof-input-glass {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.1); /* Glass Overlay */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff; /* Pure White */
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.cof-input-glass:focus {
+    outline: none;
+    border-color: #a7f432; /* Lime Accent */
+    box-shadow: 0 0 0 3px rgba(167, 244, 50, 0.1);
+}
+
+.cof-input-glass::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+select.cof-input-glass {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+}
+
+textarea.cof-input-glass {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Services Grid */
+.cof-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.cof-service-card {
+    display: block;
+    cursor: pointer;
+}
+
+.cof-service-card input {
+    display: none;
+}
+
+.cof-service-content {
+    background: rgba(255, 255, 255, 0.05); /* Glass Overlay */
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.cof-service-card:hover .cof-service-content {
+    border-color: rgba(167, 244, 50, 0.3); /* Lime Accent */
+    transform: translateY(-2px);
+}
+
+.cof-service-card input:checked + .cof-service-content {
+    border-color: #a7f432; /* Lime Accent */
+    background: rgba(167, 244, 50, 0.1);
+    transform: translateY(-2px);
+}
+
+.cof-service-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.cof-service-name {
+    color: #ffffff; /* Pure White */
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Buttons */
+.cof-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cof-btn-primary {
+    background: #a7f432; /* Lime Accent */
+    color: #1a1c24; /* Deep Charcoal */
+}
+
+.cof-btn-primary:hover {
+    background: #b6ff47;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(167, 244, 50, 0.3);
+}
+
+.cof-btn-secondary {
+    background: rgba(255, 255, 255, 0.1); /* Glass Overlay */
+    color: #ffffff; /* Pure White */
+}
+
+.cof-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.cof-btn-arrow {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.cof-btn:hover .cof-btn-arrow {
+    transform: translateX(3px);
+}
+
+.cof-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Review Summary */
+#cof-review-summary {
+    background: rgba(255, 255, 255, 0.05); /* Glass Overlay */
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+#cof-review-summary h3 {
+    color: #ffffff; /* Pure White */
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+#cof-review-summary p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+/* Modal */
+.cof-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 28, 36, 0.9); /* Deep Charcoal with opacity */
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.cof-modal-content {
+    background: #2a2d3a; /* Dark Slate */
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cof-success-icon {
+    font-size: 4rem;
+    color: #a7f432; /* Lime Accent */
+    margin-bottom: 1.5rem;
+}
+
+.cof-modal-content h3 {
+    color: #ffffff; /* Pure White */
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+}
+
+.cof-modal-content p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.cof-success-details {
+    background: rgba(255, 255, 255, 0.05); /* Glass Overlay */
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.cof-success-details p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+/* Error Styles */
+.cof-error {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: 4px;
+    border-left: 3px solid #ff6b6b;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .cof-form-glass {
+        flex-direction: column;
+    }
+    
+    .cof-form-sidebar {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    
+    .cof-progress-steps {
+        display: flex;
+        overflow-x: auto;
+        gap: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    .cof-step-item {
+        flex-direction: column;
+        text-align: center;
+        min-width: 100px;
+        padding: 1rem 0.5rem;
+    }
+    
+    .cof-step-number {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .cof-step-info {
+        display: none;
+    }
+    
+    .cof-form-content {
+        padding: 1.5rem;
+    }
+    
+    .cof-form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cof-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .cof-form-container {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+    
+    .cof-services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cof-step-footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .cof-btn {
+        width: 100%;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cof-step.active {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Custom Scrollbar */
+.cof-form-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cof-form-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.cof-form-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.cof-form-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}

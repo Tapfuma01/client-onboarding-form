@@ -1,0 +1,133 @@
+/* Admin Styles */
+.cof-dashboard {
+    margin-top: 20px;
+}
+
+.cof-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.cof-stat-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.cof-stat-card h3 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #0073aa;
+}
+
+.cof-stat-card p {
+    margin: 5px 0 0;
+    color: #666;
+}
+
+.cof-recent-submissions {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cof-submissions {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+/* Add these styles: */
+.cof-log-level {
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.cof-log-level-error { background: #ffebe8; color: #d63638; }
+.cof-log-level-warning { background: #fff8e5; color: #dba617; }
+.cof-log-level-info { background: #e8f2f5; color: #2271b1; }
+.cof-log-level-success { background: #edfaef; color: #00a32a; }
+
+.cof-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.cof-stat-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.cof-stat-card h3 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #0073aa;
+}
+
+.cof-stat-card p {
+    margin: 5px 0 0;
+    color: #666;
+}
+
+.cof-email-status {
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.cof-email-status-pending { background: #fff8e5; color: #dba617; }
+.cof-email-status-processing { background: #e8f2f5; color: #2271b1; }
+.cof-email-status-sent { background: #edfaef; color: #00a32a; }
+.cof-email-status-failed { background: #ffebe8; color: #d63638; }
+.cof-email-status-disabled { background: #f6f7f7; color: #646970; }
+
+.cof-status-completed { background: #edfaef; color: #00a32a; }
+.cof-status-draft { background: #fff8e5; color: #dba617; }
+
+.cof-submission-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.cof-submission-meta p {
+    margin: 5px 0;
+}
+
+.cof-submission-tabs {
+    margin-top: 20px;
+}
+
+.cof-tab-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 0 8px 8px 8px;
+}
+
+.cof-tab-content table.widefat {
+    border: none;
+    box-shadow: none;
+}
+
+.cof-tab-content table.widefat th {
+    background: #f6f7f7;
+}
