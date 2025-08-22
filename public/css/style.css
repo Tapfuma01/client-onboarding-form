@@ -1,121 +1,27 @@
-/* Client Onboarding Form - Updated Design to Match Image */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-    background: #2a2d3a;
-    color: #ffffff;
-    min-height: 100vh;
-}
-
-/* Global Header Bar */
-.cof-global-navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 70px;
-    background: #1a1c24;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 2rem;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.cof-nav-left {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.cof-logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: 0.1em;
-}
-
-.cof-title {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 500;
-    letter-spacing: 0.05em;
-}
-
-.cof-nav-right {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.cof-nav-exit {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    transition: color 0.3s ease;
-}
-
-.cof-nav-exit:hover {
-    color: #ffffff;
-}
-
-.cof-nav-savedraft {
-    background: #a7f432;
-    color: #1a1c24;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.cof-nav-savedraft:hover {
-    background: #b6ff47;
-    transform: translateY(-1px);
-}
-
-/* Main Container */
-.cof-fullpage-wrapper {
-    padding-top: 70px;
-    min-height: 100vh;
-    background: #2a2d3a;
-}
-
+/* Client Onboarding Form - Dark Mode Design */
 .cof-form-container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 2rem auto;
-    padding: 0 2rem;
-    height: calc(100vh - 140px);
+    padding: 0 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
 }
 
 .cof-form-glass {
-    background: rgba(58, 61, 74, 0.8);
-    border-radius: 20px;
+    background: #2a2d3a; /* Dark Slate */
+    border-radius: 16px;
     overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     display: flex;
-    height: 100%;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 600px;
 }
 
-/* Left Sidebar Navigation */
+/* Sidebar Styles */
 .cof-form-sidebar {
-    width: 350px;
-    background: rgba(26, 28, 36, 0.9);
+    width: 300px;
+    background: #1a1c24; /* Deep Charcoal */
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cof-sidebar-header {
@@ -123,70 +29,59 @@ body {
 }
 
 .cof-sidebar-header h2 {
-    display: none; /* Hidden as per image */
+    color: #ffffff; /* Pure White */
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
 }
 
 .cof-sidebar-header p {
-    display: none; /* Hidden as per image */
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-size: 0.9rem;
 }
 
 .cof-progress-steps {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 }
 
 .cof-step-item {
     display: flex;
     align-items: center;
-    padding: 1rem 1.5rem;
-    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
     transition: all 0.3s ease;
     cursor: pointer;
-    background: rgba(58, 61, 74, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
 }
 
 .cof-step-item:hover {
-    background: rgba(58, 61, 74, 0.8);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .cof-step-item.active {
-    background: #a7f432;
-    color: #1a1c24;
+    background: #3a3d4a; /* Steel Gray */
 }
 
-.cof-step-item.completed {
-    background: rgba(58, 61, 74, 0.8);
+.cof-step-item.completed .cof-step-number {
+    background: #a7f432; /* Lime Accent */
+    color: #1a1c24; /* Deep Charcoal */
 }
 
 .cof-step-number {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    color: #ffffff;
+    background: #3a3d4a; /* Steel Gray */
+    color: rgba(255, 255, 255, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     margin-right: 1rem;
     transition: all 0.3s ease;
-}
-
-.cof-step-item.active .cof-step-number {
-    background: #1a1c24;
-    border-color: #1a1c24;
-    color: #ffffff;
-}
-
-.cof-step-item.completed .cof-step-number {
-    background: #a7f432;
-    border-color: #a7f432;
-    color: #1a1c24;
 }
 
 .cof-step-info {
@@ -194,37 +89,63 @@ body {
 }
 
 .cof-step-title {
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.cof-step-item.active .cof-step-title {
-    color: #1a1c24;
+    color: #ffffff; /* Pure White */
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
 }
 
 .cof-step-desc {
-    display: none; /* Hidden as per image */
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
 }
 
 .cof-step-indicator {
-    display: none; /* Hidden as per image */
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3a3d4a; /* Steel Gray */
+    transition: all 0.3s ease;
+}
+
+.cof-step-item.active .cof-step-indicator {
+    background: #a7f432; /* Lime Accent */
+    box-shadow: 0 0 10px rgba(167, 244, 50, 0.5);
 }
 
 .cof-sidebar-footer {
-    display: none; /* Hidden as per image */
+    margin-top: auto;
+    padding-top: 2rem;
 }
 
-/* Main Content Area */
+.cof-progress-bar {
+    width: 100%;
+    height: 4px;
+    background: #3a3d4a; /* Steel Gray */
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.cof-progress-fill {
+    height: 100%;
+    background: #a7f432; /* Lime Accent */
+    width: 16.66%; /* 1/6 */
+    transition: width 0.3s ease;
+}
+
+.cof-progress-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/* Form Content Styles */
 .cof-form-content {
     flex: 1;
-    padding: 3rem;
-    background: rgba(58, 61, 74, 0.4);
+    padding: 2rem;
+    background: #2a2d3a; /* Dark Slate */
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
 }
 
 .cof-step {
@@ -238,20 +159,20 @@ body {
 }
 
 .cof-step-header {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .cof-step-header h2 {
-    color: #ffffff;
+    color: #ffffff; /* Pure White */
     font-size: 1.8rem;
     font-weight: 600;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    margin: 0 0 0.5rem 0;
 }
 
 .cof-step-header p {
-    display: none; /* Hidden as per image */
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-size: 1rem;
 }
 
 .cof-step-body {
@@ -261,17 +182,61 @@ body {
 
 .cof-step-footer {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Form Grid Layout */
+/* Welcome Step */
+.cof-welcome-content {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.cof-welcome-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.cof-welcome-content h3 {
+    color: #ffffff; /* Pure White */
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+}
+
+.cof-welcome-content p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.cof-feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cof-feature {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+
+.cof-feature-icon {
+    color: #a7f432; /* Lime Accent */
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+/* Form Grid */
 .cof-form-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    max-width: 800px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
 
 .cof-form-group {
@@ -284,31 +249,29 @@ body {
 
 .cof-form-group label {
     display: block;
-    color: rgba(255, 255, 255, 0.8);
+    color: #ffffff; /* Pure White */
     font-weight: 500;
-    margin-bottom: 0.8rem;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
 }
 
-/* Input Fields - Exact Match to Image */
+/* Glass Input Fields */
 .cof-input-glass {
     width: 100%;
-    padding: 1rem 1.2rem;
-    background: #1a1c24;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.1); /* Glass Overlay */
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    color: #ffffff;
+    color: #ffffff; /* Pure White */
     font-size: 0.95rem;
     transition: all 0.3s ease;
-    font-family: inherit;
+    backdrop-filter: blur(10px);
 }
 
 .cof-input-glass:focus {
     outline: none;
-    border-color: #a7f432;
-    box-shadow: 0 0 0 2px rgba(167, 244, 50, 0.2);
+    border-color: #a7f432; /* Lime Accent */
+    box-shadow: 0 0 0 3px rgba(167, 244, 50, 0.1);
 }
 
 .cof-input-glass::placeholder {
@@ -325,121 +288,14 @@ select.cof-input-glass {
 
 textarea.cof-input-glass {
     resize: vertical;
-    min-height: 100px;
-}
-
-/* Radio Button Styling */
-.cof-radio-group {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.cof-radio-item {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-}
-
-.cof-radio-item input[type="radio"] {
-    width: 20px;
-    height: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    background: transparent;
-    appearance: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.cof-radio-item input[type="radio"]:checked {
-    border-color: #a7f432;
-    background: #a7f432;
-    position: relative;
-}
-
-.cof-radio-item input[type="radio"]:checked::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #1a1c24;
-}
-
-.cof-radio-item label {
-    color: #ffffff;
-    font-size: 0.9rem;
-    cursor: pointer;
-    margin: 0;
-    text-transform: none;
-    letter-spacing: normal;
-}
-
-/* Address Fields Special Layout */
-.cof-address-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-}
-
-.cof-address-row {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 1rem;
-}
-
-/* Buttons */
-.cof-btn {
-    padding: 0.8rem 2rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.cof-btn-primary {
-    background: #a7f432;
-    color: #1a1c24;
-}
-
-.cof-btn-primary:hover {
-    background: #b6ff47;
-    transform: translateY(-1px);
-    box-shadow: 0 5px 15px rgba(167, 244, 50, 0.3);
-}
-
-.cof-btn-secondary {
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.cof-btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.cof-btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none !important;
+    min-height: 80px;
 }
 
 /* Services Grid */
 .cof-services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
     margin-bottom: 2rem;
 }
 
@@ -453,96 +309,98 @@ textarea.cof-input-glass {
 }
 
 .cof-service-content {
-    background: #1a1c24;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05); /* Glass Overlay */
+    border: 2px solid transparent;
     border-radius: 12px;
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1rem;
     text-align: center;
     transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
 }
 
 .cof-service-card:hover .cof-service-content {
-    border-color: rgba(167, 244, 50, 0.5);
+    border-color: rgba(167, 244, 50, 0.3); /* Lime Accent */
     transform: translateY(-2px);
 }
 
 .cof-service-card input:checked + .cof-service-content {
-    border-color: #a7f432;
+    border-color: #a7f432; /* Lime Accent */
     background: rgba(167, 244, 50, 0.1);
+    transform: translateY(-2px);
 }
 
 .cof-service-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .cof-service-name {
-    color: #ffffff;
-    font-weight: 600;
+    color: #ffffff; /* Pure White */
+    font-weight: 500;
     font-size: 0.9rem;
 }
 
-/* Welcome Step */
-.cof-welcome-content {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 3rem 0;
-}
-
-.cof-welcome-icon {
-    font-size: 5rem;
-    margin-bottom: 2rem;
-}
-
-.cof-welcome-content h3 {
-    color: #ffffff;
-    font-size: 2rem;
-    margin: 0 0 1.5rem 0;
-    font-weight: 600;
-}
-
-.cof-welcome-content p {
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.6;
-    margin-bottom: 2.5rem;
-    font-size: 1.1rem;
-}
-
-.cof-feature-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 3rem;
-}
-
-.cof-feature {
-    display: flex;
+/* Buttons */
+.cof-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1rem;
 }
 
-.cof-feature-icon {
-    color: #a7f432;
-    font-weight: bold;
-    margin-right: 1rem;
-    font-size: 1.2rem;
+.cof-btn-primary {
+    background: #a7f432; /* Lime Accent */
+    color: #1a1c24; /* Deep Charcoal */
+}
+
+.cof-btn-primary:hover {
+    background: #b6ff47;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(167, 244, 50, 0.3);
+}
+
+.cof-btn-secondary {
+    background: rgba(255, 255, 255, 0.1); /* Glass Overlay */
+    color: #ffffff; /* Pure White */
+}
+
+.cof-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.cof-btn-arrow {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.cof-btn:hover .cof-btn-arrow {
+    transform: translateX(3px);
+}
+
+.cof-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
 }
 
 /* Review Summary */
 #cof-review-summary {
-    background: #1a1c24;
+    background: rgba(255, 255, 255, 0.05); /* Glass Overlay */
     border-radius: 12px;
-    padding: 2rem;
+    padding: 1.5rem;
     margin-bottom: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 #cof-review-summary h3 {
-    color: #a7f432;
+    color: #ffffff; /* Pure White */
     margin: 0 0 1rem 0;
     font-size: 1.1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -555,42 +413,6 @@ textarea.cof-input-glass {
     font-size: 0.9rem;
 }
 
-/* Success Message */
-.cof-success-message {
-    text-align: center;
-    padding: 4rem 2rem;
-}
-
-.cof-success-icon {
-    font-size: 5rem;
-    color: #a7f432;
-    margin-bottom: 2rem;
-}
-
-.cof-success-message h2 {
-    color: #ffffff;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.cof-success-message p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
-
-/* Error Styles */
-.cof-error {
-    color: #ff6b6b;
-    font-size: 0.85rem;
-    margin-top: 0.5rem;
-    padding: 0.8rem 1rem;
-    background: rgba(255, 107, 107, 0.1);
-    border-radius: 6px;
-    border-left: 3px solid #ff6b6b;
-}
-
 /* Modal */
 .cof-modal {
     display: none;
@@ -599,7 +421,7 @@ textarea.cof-input-glass {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(26, 28, 36, 0.9);
+    background: rgba(26, 28, 36, 0.9); /* Deep Charcoal with opacity */
     backdrop-filter: blur(5px);
     z-index: 10000;
     align-items: center;
@@ -607,47 +429,61 @@ textarea.cof-input-glass {
 }
 
 .cof-modal-content {
-    background: #2a2d3a;
+    background: #2a2d3a; /* Dark Slate */
     border-radius: 16px;
-    padding: 3rem;
+    padding: 2rem;
     max-width: 500px;
     width: 90%;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cof-success-icon {
+    font-size: 4rem;
+    color: #a7f432; /* Lime Accent */
+    margin-bottom: 1.5rem;
+}
+
+.cof-modal-content h3 {
+    color: #ffffff; /* Pure White */
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+}
+
+.cof-modal-content p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.cof-success-details {
+    background: rgba(255, 255, 255, 0.05); /* Glass Overlay */
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.cof-success-details p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+/* Error Styles */
+.cof-error {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: 4px;
+    border-left: 3px solid #ff6b6b;
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
-    .cof-form-container {
-        padding: 0 1rem;
-    }
-    
-    .cof-form-sidebar {
-        width: 300px;
-    }
-    
-    .cof-form-content {
-        padding: 2rem;
-    }
-}
-
 @media (max-width: 968px) {
-    .cof-global-navbar {
-        padding: 0 1rem;
-    }
-    
-    .cof-nav-left {
-        gap: 1rem;
-    }
-    
-    .cof-title {
-        display: none;
-    }
-    
     .cof-form-glass {
         flex-direction: column;
-        height: auto;
     }
     
     .cof-form-sidebar {
@@ -656,16 +492,16 @@ textarea.cof-input-glass {
     }
     
     .cof-progress-steps {
-        flex-direction: row;
+        display: flex;
         overflow-x: auto;
-        gap: 0.5rem;
+        gap: 1rem;
         padding-bottom: 1rem;
     }
     
     .cof-step-item {
         flex-direction: column;
         text-align: center;
-        min-width: 120px;
+        min-width: 100px;
         padding: 1rem 0.5rem;
     }
     
@@ -674,8 +510,8 @@ textarea.cof-input-glass {
         margin-bottom: 0.5rem;
     }
     
-    .cof-step-title {
-        font-size: 0.75rem;
+    .cof-step-info {
+        display: none;
     }
     
     .cof-form-content {
@@ -684,20 +520,10 @@ textarea.cof-input-glass {
     
     .cof-form-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
     
     .cof-services-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .cof-step-footer {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .cof-btn {
-        width: 100%;
     }
 }
 
@@ -711,35 +537,20 @@ textarea.cof-input-glass {
         grid-template-columns: 1fr;
     }
     
-    .cof-global-navbar {
-        height: 60px;
-        padding: 0 0.5rem;
+    .cof-step-footer {
+        flex-direction: column;
+        gap: 1rem;
     }
     
-    .cof-fullpage-wrapper {
-        padding-top: 60px;
-    }
-    
-    .cof-logo {
-        font-size: 1.2rem;
-    }
-    
-    .cof-nav-savedraft {
-        padding: 0.5rem 0.8rem;
-        font-size: 0.75rem;
+    .cof-btn {
+        width: 100%;
     }
 }
 
 /* Animation */
 @keyframes fadeIn {
-    from { 
-        opacity: 0; 
-        transform: translateY(20px); 
-    }
-    to { 
-        opacity: 1; 
-        transform: translateY(0); 
-    }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .cof-step.active {

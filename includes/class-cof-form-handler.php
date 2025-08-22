@@ -169,37 +169,29 @@ class COF_Form_Handler {
         
         switch ($step) {
             case 2: // Business Information
-                $sanitized['project_name'] = sanitize_text_field($data['project_name'] ?? '');
                 $sanitized['business_name'] = sanitize_text_field($data['business_name'] ?? '');
+                $sanitized['website_url'] = esc_url_raw($data['website_url'] ?? '');
+                $sanitized['business_address'] = sanitize_textarea_field($data['business_address'] ?? '');
+                $sanitized['business_description'] = sanitize_textarea_field($data['business_description'] ?? '');
                 $sanitized['contact_name'] = sanitize_text_field($data['contact_name'] ?? '');
                 $sanitized['contact_email'] = sanitize_email($data['contact_email'] ?? '');
                 $sanitized['contact_phone'] = sanitize_text_field($data['contact_phone'] ?? '');
-                $sanitized['milestone_approver'] = sanitize_text_field($data['milestone_approver'] ?? '');
-                $sanitized['billing_email'] = sanitize_email($data['billing_email'] ?? '');
-                $sanitized['vat_number'] = sanitize_text_field($data['vat_number'] ?? '');
-                $sanitized['preferred_contact'] = sanitize_text_field($data['preferred_contact'] ?? '');
-                $sanitized['address_line1'] = sanitize_text_field($data['address_line1'] ?? '');
-                $sanitized['address_line2'] = sanitize_text_field($data['address_line2'] ?? '');
-                $sanitized['city'] = sanitize_text_field($data['city'] ?? '');
-                $sanitized['country'] = sanitize_text_field($data['country'] ?? '');
-                $sanitized['postal_code'] = sanitize_text_field($data['postal_code'] ?? '');
                 break;
                 
-            case 3: // Technical Information
+            case 3: // Project Details
+                $sanitized['project_name'] = sanitize_text_field($data['project_name'] ?? '');
                 $sanitized['project_budget'] = sanitize_text_field($data['project_budget'] ?? '');
                 $sanitized['project_timeline'] = sanitize_text_field($data['project_timeline'] ?? '');
-                $sanitized['website_url'] = esc_url_raw($data['website_url'] ?? '');
                 $sanitized['project_goals'] = sanitize_textarea_field($data['project_goals'] ?? '');
                 $sanitized['target_audience'] = sanitize_textarea_field($data['target_audience'] ?? '');
                 break;
                 
-            case 4: // Reporting Information
+            case 4: // Services & Features
                 $sanitized['services_needed'] = isset($data['services']) ? array_map('sanitize_text_field', $data['services']) : array();
-                $sanitized['reporting_requirements'] = sanitize_textarea_field($data['reporting_requirements'] ?? '');
+                $sanitized['additional_services'] = sanitize_textarea_field($data['additional_services'] ?? '');
                 break;
                 
-            case 5: // Marketing Information
-                $sanitized['business_description'] = sanitize_textarea_field($data['business_description'] ?? '');
+            case 5: // Marketing & Brand
                 $sanitized['brand_personality'] = sanitize_textarea_field($data['brand_personality'] ?? '');
                 $sanitized['brand_values'] = sanitize_textarea_field($data['brand_values'] ?? '');
                 $sanitized['competitor_analysis'] = sanitize_textarea_field($data['competitor_analysis'] ?? '');
@@ -221,9 +213,6 @@ class COF_Form_Handler {
         
         switch ($step) {
             case 2:
-                if (empty($data['project_name'])) {
-                    $errors[] = __('Project name is required', 'client-onboarding-form');
-                }
                 if (empty($data['business_name'])) {
                     $errors[] = __('Business name is required', 'client-onboarding-form');
                 }
@@ -236,7 +225,9 @@ class COF_Form_Handler {
                 break;
                 
             case 3:
-                // Technical information validation can be added here if needed
+                if (empty($data['project_name'])) {
+                    $errors[] = __('Project name is required', 'client-onboarding-form');
+                }
                 break;
         }
         
